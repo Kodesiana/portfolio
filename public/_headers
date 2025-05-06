@@ -1,0 +1,12 @@
+https://:project.pages.dev/*
+    X-Robots-Tag: noindex
+
+/assets/*
+    Cache-Control: "public, max-age=15552000"
+
+/*
+    X-Frame-Options: DENY
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: no-referrer
+    Permissions-Policy: document-domain=()
+    Content-Security-Policy: frame-ancestors 'none';
