@@ -1,0 +1,101 @@
+import { Button, Flex, Stack, Text, Title } from "@mantine/core";
+import {
+	IconMicroscope,
+	IconPresentation,
+	IconServer,
+	IconTrophy,
+	IconUsers,
+} from "@tabler/icons-react";
+import { useState } from "react";
+import ReactGA from "react-ga4";
+
+import ExperienceBulletList from "~/components/ExperienceBulletList";
+import PublicationBulletList from "~/components/PublicationBulletList";
+import HomeLabSection from "../components/HomeLab";
+
+import {
+	Activities,
+	Awards,
+	Certifications,
+	Presentations,
+	Publications,
+} from "~/data";
+
+const ExtraTabs = {
+	awards: {
+		label: "Awards",
+		icon: <IconTrophy size={18} />,
+		component: <ExperienceBulletList items={Awards} />,
+	},
+	certification: {
+		label: "Certification",
+		icon: <IconUsers size={18} />,
+		component: <ExperienceBulletList items={Certifications} />,
+	},
+	activities: {
+		label: "Activities",
+		icon: <IconUsers size={18} />,
+		component: <ExperienceBulletList items={Activities} />,
+	},
+	publication: {
+		label: "Publication",
+		icon: <IconMicroscope size={18} />,
+		component: (
+			<Stack>
+				<Title order={5} mt="lg">
+					Conference Papers
+				</Title>
+				<PublicationBulletList
+					items={Publications.filter((x) => x.type === "conference_paper")}
+				/>
+
+				<Title order={5}>Journal Articles</Title>
+				<PublicationBulletList
+					items={Publications.filter((x) => x.type === "journal_article")}
+				/>
+			</Stack>
+		),
+	},
+	presentation: {
+		label: "Presentation",
+		icon: <IconPresentation size={18} />,
+		component: <ExperienceBulletList items={Presentations} />,
+	},
+	homelab: {
+		label: "Home Lab",
+		icon: <IconServer size={18} />,
+		component: <HomeLabSection />,
+	},
+};
+
+export default function ExtraSection() {
+	const [selectedTab, setSelectedTab] = useState<keyof typeof ExtraTabs | "">(
+		"",
+	);
+
+	return (
+		<Stack my="xl" align="center" justify="center">
+			{" "}
+			<Text>Get to know more about me:</Text>
+			<Flex align="center" justify="center" gap="xs" my="md" wrap="wrap">
+				{Object.entries(ExtraTabs).map(([k, v]) => (
+					<Button
+						key={k}
+						variant={k === selectedTab ? "filled" : "outline"}
+						leftSection={v.icon}
+						onClick={() => {
+							ReactGA.event("portfolio_interaction", {
+								section: "know_more",
+								target: k,
+							});
+							setSelectedTab(k as keyof typeof ExtraTabs);
+						}}
+					>
+						{v.label}
+					</Button>
+				))}
+			</Flex>
+			{selectedTab !== "" && ExtraTabs[selectedTab].component}
+		</Stack>
+	);
+}
