@@ -1,128 +1,73 @@
-import {
-	IconBrandAnsible,
-	IconBrandCSharp,
-	IconBrandNodejs,
-	IconBrandOpenai,
-	IconBrandPython,
-	IconBrandTypescript,
-} from "@tabler/icons-react";
-import type { JSX } from "react";
+import { Text } from "@mantine/core";
+import type { ReactNode } from "react";
 
-export type Tech = Record<
-	string,
-	| { show: true; label: string; icon: JSX.Element }
-	| { show: false; label: string; icon?: JSX.Element }
->;
-export const Techs: Tech = {
-	// languages
-	csharp: {
-		label: ".NET",
-		show: true,
-		icon: <IconBrandCSharp />,
-	},
-	python: {
-		label: "Python",
-		show: true,
-		icon: <IconBrandPython />,
-	},
-	typescript: {
-		label: "TypeScript",
-		show: true,
-		icon: <IconBrandTypescript />,
-	},
-	// runtimes
-	nodejs: {
-		label: "NodeJS",
-		show: true,
-		icon: <IconBrandNodejs />,
-	},
-	bun: {
-		label: "Bun",
-		show: false,
-	},
-	// Frameworks
-	aspnetcore: {
-		label: "ASP.NET Core",
-		show: false,
-	},
-	react: {
-		label: "React",
-		show: false,
-	},
-	flask: {
-		label: "Flask",
-		show: false,
-	},
-	transformers: {
-		label: "Transformers",
-		show: false,
-	},
-	// BI Tools
-	powerbi: {
-		label: "MS Power BI",
-		show: false,
-	},
-	// Tools
-	ansible: {
-		label: "Ansible",
-		show: true,
-		icon: <IconBrandAnsible />,
-	},
-	// Services
-	openai: {
-		label: "Open AI",
-		show: true,
-		icon: <IconBrandOpenai />,
-	},
-	gemini: {
-		label: "Gemini",
-		show: false,
-	},
-};
+import type { TechNames } from "./tech";
 
-export const TechMapping = Object.entries(Techs).reduce(
-	(prev, [key, value]) => {
-		prev[key] = value.label;
-		return prev;
-	},
-	{} as Record<keyof typeof Techs, string>,
-);
-
-export const ProjectCategory = {
-	"open-source": "Open Source",
-};
-
+export type ProjectCategory = "open-source" | "research" | "active";
 export type Project = {
-	name: string;
-	tech: Array<keyof typeof TechMapping>;
-	category: keyof typeof ProjectCategory;
+	key: string;
+	title: string;
+	tech: Array<TechNames>;
+	categories: Array<ProjectCategory>;
 	shortDesc: string;
-	longDesc?: JSX.Element;
+	longDesc: ReactNode;
+	employment?: string;
 	coverImage?: string;
 	githubUrl?: string;
 	appUrl?: string;
 };
 export const Projects: Project[] = [
 	{
-		name: "Ritsu-Pi",
-		category: "open-source",
-		tech: ["ansible"],
-		shortDesc: "Lorem ipsum",
+		key: "ritsu-pi",
+		title: "Ritsu-Pi",
+		categories: ["open-source", "active"],
+		tech: ["ansible", "docker", "grafana", "prometheus", "mlflow"],
+		coverImage: "https://placehold.co/600x400",
 		githubUrl: "https://github.com/fahminlb33/ritsu-pi",
+		shortDesc: "A home lab server automation using Ansible playbook",
+		longDesc: <Text>Lorem ipsum</Text>,
 	},
 	{
-		name: "Bogor House Price Analysis",
-		category: "open-source",
-		tech: ["python", "powerbi", "gemini", "gemini"],
-		shortDesc: "Lorem ipsum",
+		key: "bogor-house-price",
+		title: "Bogor House Price Analysis",
+		categories: ["open-source"],
+		tech: ["python", "duckdb", "powerbi", "gemini"],
+		coverImage: "https://placehold.co/600x400",
 		githubUrl: "https://github.com/fahminlb33/bogor-house-price",
+		shortDesc: "End-to-end house price analysis and recommendation using RAG",
+		longDesc: <Text>Lorem ipsum</Text>,
 	},
 	{
-		name: "Kalkulator Gaji",
-		category: "open-source",
+		key: "salary-calculator",
+		title: "PPP Salary Calculator",
+		categories: ["open-source", "active"],
 		tech: ["typescript", "react"],
-		shortDesc: "Lorem ipsum",
+		coverImage: "https://placehold.co/600x400",
 		githubUrl: "https://github.com/Kodesiana/ppp-calculator",
 		appUrl: "https://kalkulator-gaji.kodesiana.app/",
+		shortDesc: "Salary converter using the Purchasing Power Parity (PPP) method to approximate standard of living",
+		longDesc: <Text>Lorem ipsum</Text>,
+	},
+	{
+		key: "pohonfit",
+		title: "Pohonfit",
+		categories: ["open-source", "research", "active"],
+		tech: ["typescript", "react"],
+		coverImage: "https://placehold.co/600x400",
+		githubUrl: "https://github.com/Kodesiana/ppp-calculator",
+		appUrl: "https://kalkulator-gaji.kodesiana.app/",
+		shortDesc: "Tool for estimating tree growth using a novel nonlinear regression model",
+		longDesc: <Text>Lorem ipsum</Text>,
+	},
+	{
+		key: "thesis-whale",
+		title: "Whale Sighthing Zone Prediction",
+		categories: ["open-source", "research", "active"],
+		tech: ["typescript", "react"],
+		coverImage: "https://placehold.co/600x400",
+		githubUrl: "https://github.com/fahminlb33/autogbifml",
+		appUrl: "https://paus.kodesiana.app",
+		shortDesc: "AutoGBIFML: modelling whale sighting zones using GBIF occurrence data and tree-based models (my master thesis)",
+		longDesc: <Text>Lorem ipsum</Text>,
 	},
 ];

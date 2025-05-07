@@ -1,21 +1,17 @@
-import { Badge, Flex, Stack, Text, Timeline } from "@mantine/core";
+import { Badge, Flex, Stack, Text, Timeline, Title } from "@mantine/core";
 
-import { ProfessionalExperience } from "~/data";
-
-const GreenBadges = [
-	"C#",
-	"TypeScript",
-	"Golang",
-	"Python",
-	"NodeJS",
-	".NET Framework",
-];
+import {
+	ProfessionalExperience,
+	ProfessionalExperienceGreenBadges,
+} from "~/data";
 
 export default function ExperienceSection() {
 	return (
 		<div>
 			<Stack justify="center" align="center" my="xl">
-				<Text mb="xl">I have worked at</Text>
+				<Title order={2} mb="xl">
+					I have worked at
+				</Title>
 
 				<Timeline active={0}>
 					{ProfessionalExperience.map((x) => (
@@ -31,7 +27,11 @@ export default function ExperienceSection() {
 										key={y}
 										variant="light"
 										style={{ textTransform: "none" }}
-										color={GreenBadges.includes(y) ? "teal" : undefined}
+										color={
+											ProfessionalExperienceGreenBadges.includes(y)
+												? "teal"
+												: undefined
+										}
 										autoContrast
 									>
 										{y}

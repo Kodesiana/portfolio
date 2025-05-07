@@ -7,7 +7,7 @@ import {
 	Text,
 	Title,
 } from "@mantine/core";
-import { IconArrowRight } from "@tabler/icons-react";
+import { TbArrowRight } from "react-icons/tb";
 
 import AvatarPng from "~/assets/avatar.jpg";
 import { BlogUrl, SocialLinks } from "~/data";
@@ -32,7 +32,7 @@ export default function HeroSection() {
 				size="lg"
 				href={BlogUrl}
 				target="_blank"
-				rightSection={<IconArrowRight size={24} />}
+				rightSection={<TbArrowRight size={24} />}
 			>
 				Read my blog
 			</Button>

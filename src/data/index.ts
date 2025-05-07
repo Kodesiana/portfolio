@@ -11,3 +11,4 @@ export * from "./presentation";
 export * from "./profile";
 export * from "./projects";
 export * from "./publication";
+export * from "./tech";

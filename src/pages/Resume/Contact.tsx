@@ -1,5 +1,5 @@
 import { Button, Group, Stack, Title } from "@mantine/core";
-import { IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
+import { TbBrandWhatsapp, TbMail } from "react-icons/tb";
 
 import { Email, WhatsApp } from "~/data";
 
@@ -14,7 +14,7 @@ export default function ContactSection() {
 						size="xl"
 						variant="gradient"
 						gradient={{ from: "blue", to: "cyan", deg: 200 }}
-						leftSection={<IconMail size={32} />}
+						leftSection={<TbMail size={32} />}
 						component="a"
 						href={`mailto:${Email}`}
 					>
@@ -23,7 +23,7 @@ export default function ContactSection() {
 					<Button
 						size="xl"
 						color="green"
-						leftSection={<IconBrandWhatsapp size={32} />}
+						leftSection={<TbBrandWhatsapp size={32} />}
 						component="a"
 						href={`https://wa.me/${WhatsApp}`}
 					>

@@ -17,7 +17,7 @@ export default function EducationSection() {
 
 	return (
 		<Stack align="center" justify="center" my={120}>
-			<Text mb="xl">I graduated from ...</Text>
+			<Title order={2} mb="xl">I graduated from</Title>
 
 			<Group mb="md">
 				{Educations.map((x) => (

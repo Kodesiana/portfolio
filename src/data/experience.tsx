@@ -12,6 +12,16 @@ export type Experience = {
 	badges: string[];
 };
 
+export const ProfessionalExperienceGreenBadges = [
+	"C#",
+	"TypeScript",
+	"Golang",
+	"Python",
+	"NodeJS",
+	".NET",
+	".NET Framework",
+];
+
 export const ProfessionalExperience: Experience[] = [
 	{
 		key: "freelance-2024",
@@ -37,6 +47,7 @@ export const ProfessionalExperience: Experience[] = [
 		badges: [
 			"TypeScript",
 			"C#",
+			".NET",
 			"Python",
 			"Remix",
 			"ASP.NET Core",

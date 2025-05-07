@@ -1,17 +1,17 @@
 import { Button, Flex, Stack, Text, Title } from "@mantine/core";
-import {
-	IconMicroscope,
-	IconPresentation,
-	IconServer,
-	IconTrophy,
-	IconUsers,
-} from "@tabler/icons-react";
 import { useState } from "react";
 import ReactGA from "react-ga4";
+import {
+	TbMicroscope,
+	TbPresentation,
+	TbServer,
+	TbTrophy,
+	TbUsers,
+} from "react-icons/tb";
 
 import ExperienceBulletList from "~/components/ExperienceBulletList";
+import HomeLabSection from "~/components/HomeLab";
 import PublicationBulletList from "~/components/PublicationBulletList";
-import HomeLabSection from "../components/HomeLab";
 
 import {
 	Activities,
@@ -24,22 +24,22 @@ import {
 const ExtraTabs = {
 	awards: {
 		label: "Awards",
-		icon: <IconTrophy size={18} />,
+		icon: <TbTrophy size={18} />,
 		component: <ExperienceBulletList items={Awards} />,
 	},
 	certification: {
 		label: "Certification",
-		icon: <IconUsers size={18} />,
+		icon: <TbUsers size={18} />,
 		component: <ExperienceBulletList items={Certifications} />,
 	},
 	activities: {
 		label: "Activities",
-		icon: <IconUsers size={18} />,
+		icon: <TbUsers size={18} />,
 		component: <ExperienceBulletList items={Activities} />,
 	},
 	publication: {
 		label: "Publication",
-		icon: <IconMicroscope size={18} />,
+		icon: <TbMicroscope size={18} />,
 		component: (
 			<Stack>
 				<Title order={5} mt="lg">
@@ -58,12 +58,12 @@ const ExtraTabs = {
 	},
 	presentation: {
 		label: "Presentation",
-		icon: <IconPresentation size={18} />,
+		icon: <TbPresentation size={18} />,
 		component: <ExperienceBulletList items={Presentations} />,
 	},
 	homelab: {
 		label: "Home Lab",
-		icon: <IconServer size={18} />,
+		icon: <TbServer size={18} />,
 		component: <HomeLabSection />,
 	},
 };

@@ -40,7 +40,7 @@ export const Presentations: ExperienceBulletItem[] = [
 		description: "Introduction to Machine Learning",
 	},
 	{
-		key: "codingku-id",
+		key: "comstrac-fmipa-unpak",
 		title: "ComSTrac FMIPA Universitas Pakuan",
 		year: "2020",
 		description: "Workshop: Practical Deep Learning using TensorFlow",
