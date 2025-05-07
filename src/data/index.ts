@@ -1,5 +1,7 @@
 export * from "./types";
 
+export * from "./integrations";
+
 export * from "./activities";
 export * from "./awards";
 export * from "./certification";

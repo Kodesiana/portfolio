@@ -1,13 +1,14 @@
 import "@mantine/core/styles.css";
 import "@mantine/nprogress/styles.css";
 
+import { useEffect } from "react";
 import { Container, MantineProvider } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { ModalsProvider } from "@mantine/modals";
 import { NavigationProgress, nprogress } from "@mantine/nprogress";
 import ReactGA from "react-ga4";
 
-import { useEffect } from "react";
+import { GoogleAnalytics } from "./data";
 import FooterSection from "./components/Footer";
 import {
 	ContactSection,
@@ -29,7 +30,7 @@ export default function App() {
 		nprogress.set(scrollPercent);
 	}, [scroll]);
 
-	ReactGA.initialize("G-WCSBJTCX6E");
+	ReactGA.initialize(GoogleAnalytics.MeasurementId);
 
 	return (
 		<MantineProvider>
