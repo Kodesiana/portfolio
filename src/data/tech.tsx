@@ -368,15 +368,17 @@ const InternalTechs = {
 	arduino: {
 		label: "Arduino",
 		show: false,
-		icon: <SiArduino size={IconSize} />
+		icon: <SiArduino size={IconSize} />,
 	},
 	esp32: {
 		label: "ESP-32",
 		show: false,
-		icon: <SiEspressif size={IconSize} />
+		icon: <SiEspressif size={IconSize} />,
 	},
 };
 
 export type TechNames = keyof typeof InternalTechs;
-export const Techs: Record<TechNames, { label: string; show?: boolean; icon?: ReactNode }> =
-	InternalTechs;
+export const Techs: Record<
+	TechNames,
+	{ label: string; show?: boolean; icon?: ReactNode }
+> = InternalTechs;
