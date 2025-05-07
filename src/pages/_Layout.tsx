@@ -2,7 +2,7 @@ import "@mantine/core/styles.css";
 import "@mantine/nprogress/styles.css";
 
 import { Container, MantineProvider } from "@mantine/core";
-import { useDebouncedValue, useWindowScroll } from "@mantine/hooks";
+import { useWindowScroll } from "@mantine/hooks";
 import { NavigationProgress, nprogress } from "@mantine/nprogress";
 import { useEffect } from "react";
 import { Outlet } from "react-router";
@@ -11,16 +11,14 @@ import FooterSection from "~/components/Footer";
 
 export default function App() {
 	const [scroll, _] = useWindowScroll();
-	const [scrollDebounce] = useDebouncedValue(scroll, 10);
 
 	useEffect(() => {
 		// formula: https://css-tricks.com/how-i-put-the-scroll-percentage-in-the-browser-title-bar/
 		const scrollPercent =
-			(scrollDebounce.y /
-				(window.document.body.offsetHeight - window.innerHeight)) *
+			(scroll.y / (window.document.body.offsetHeight - window.innerHeight)) *
 			100;
 		nprogress.set(scrollPercent);
-	}, [scrollDebounce]);
+	}, [scroll]);
 
 	return (
 		<MantineProvider>
