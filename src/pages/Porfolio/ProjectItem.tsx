@@ -1,15 +1,26 @@
-import { Button, Card, Divider, Group, Image, Text } from "@mantine/core";
+import {
+	ActionIcon,
+	Avatar,
+	Badge,
+	Card,
+	Divider,
+	Flex,
+	Group,
+	HoverCard,
+	Image,
+	Text,
+} from "@mantine/core";
 import {
 	TbArrowUpRight,
 	TbBrandGithub,
 	TbBrandOpenSourceFilled,
+	TbBriefcase,
 	TbInfoCircle,
 	TbMicroscope,
 	TbPlayerPlayFilled,
 } from "react-icons/tb";
-import { Link } from "react-router";
 
-import type { Project } from "~/data";
+import { Techs, type Project } from "~/data";
 
 export default function ProjectItem({ project }: { project: Project }) {
 	return (
@@ -43,7 +54,7 @@ export default function ProjectItem({ project }: { project: Project }) {
 								<TbMicroscope
 									size="1.4em"
 									color="var(--mantine-color-blue-5)"
-									title="Research project"
+									title="Scientific research project"
 								/>
 							)) ||
 							(cat === "active" && (
@@ -51,6 +62,13 @@ export default function ProjectItem({ project }: { project: Project }) {
 									size="1.4em"
 									color="var(--mantine-color-red-5)"
 									title="Actively maintained"
+								/>
+							))||
+							(cat === "professional" && (
+								<TbBriefcase
+									size="1.4em"
+									color="var(--mantine-color-yellow-7)"
+									title="Professional work"
 								/>
 							)),
 					)}
@@ -61,48 +79,62 @@ export default function ProjectItem({ project }: { project: Project }) {
 				{project.shortDesc}
 			</Text>
 
-			{(project.githubUrl || project.appUrl) && <Divider my="md" />}
+			<Divider my="md" />
 
-			<Group gap="0" grow>
-				<Button
-					color="blue"
-					size="xs"
-					radius="md"
-					variant="subtle"
-					leftSection={<TbInfoCircle size={18} />}
-					component={Link}
-					to={`/portfolio/${project.key}`}
-				>
-					Detail
-				</Button>
-				{project.githubUrl && (
-					<Button
+			<Group gap="0" justify="space-between">
+				<HoverCard width={400}>
+					<HoverCard.Target>
+						<Avatar color="white" title="View tech stack">
+							<TbInfoCircle />
+						</Avatar>
+					</HoverCard.Target>
+
+					<HoverCard.Dropdown>
+						<Flex align="center" justify="center" wrap="wrap" gap="0">
+							{project.tech.map((tech) => (
+								<Badge
+									key={`${project.key}-${tech}`}
+									color="white"
+									variant="transparent"
+									leftSection={Techs[tech].icon}
+								>
+									{Techs[tech].label}
+								</Badge>
+							))}
+						</Flex>
+					</HoverCard.Dropdown>
+				</HoverCard>
+
+			<Group gap="xs">
+			{project.githubUrl && (
+					<ActionIcon
 						color="blue"
-						size="xs"
-						radius="md"
-						variant="subtle"
-						leftSection={<TbBrandGithub size={18} />}
+						radius="lg"
+						size="lg"
+						variant="light"
 						component="a"
 						target="_blank"
 						href={project.githubUrl}
+						title="Open GitHub repository"
 					>
-						Code
-					</Button>
+						<TbBrandGithub size={18} />
+					</ActionIcon>
 				)}
 				{project.appUrl && (
-					<Button
-						color="blue"
-						size="xs"
-						radius="md"
-						variant="subtle"
-						leftSection={<TbArrowUpRight size={18} />}
+					<ActionIcon
+						color="green"
+						radius="lg"
+						size="lg"
+						variant="light"
 						component="a"
 						target="_blank"
 						href={project.appUrl}
+						title="Visit app page"
 					>
-						Visit
-					</Button>
+						<TbArrowUpRight size={18} />
+					</ActionIcon>
 				)}
+			</Group>
 			</Group>
 		</Card>
 	);

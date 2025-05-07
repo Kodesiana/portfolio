@@ -53,7 +53,8 @@ export default function PortfolioPage() {
 					))}
 			</Flex>
 
-			<Title mt="xl">Things I have worked on</Title>
+			<Title mt="xl">Things I have built</Title>
+			<Text size="xs">The pictures is coming soon!</Text>
 			<Flex
 				mt="xl"
 				align="flex-start"
