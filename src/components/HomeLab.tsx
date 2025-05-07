@@ -1,6 +1,6 @@
 import { Badge, Flex, Image, Stack, Text } from "@mantine/core";
 
-import HomeLabPng from "~/assets/server-rack_comp.jpg";
+import HomeLabPng from "~/assets/server-rack.jpg";
 
 export default function HomeLabSection() {
 	return (
