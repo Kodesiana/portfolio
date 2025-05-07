@@ -1,17 +1,79 @@
-import { Button, Flex, Stack, Text, Title } from "@mantine/core";
+import {
+	Button,
+	Center,
+	Flex,
+	SegmentedControl,
+	Stack,
+	Text,
+	Title,
+} from "@mantine/core";
 import { useState } from "react";
 import ReactGA from "react-ga4";
-import { TbArrowLeft } from "react-icons/tb";
+import {
+	TbArrowLeft,
+	TbBrandOpenSourceFilled,
+	TbBriefcase,
+	TbEye,
+	TbMicroscope,
+	TbPlayerPlayFilled,
+} from "react-icons/tb";
 import { Link } from "react-router";
 
-import { Projects, type TechNames, Techs } from "~/data";
+import { type ProjectCategory, Projects, type TechNames, Techs } from "~/data";
 
 import ProjectItem from "./ProjectItem";
 
+const CategoryFilter = [
+	{
+		value: "",
+		label: (
+			<Center style={{ gap: 10 }}>
+				<TbEye size="1.4em" />
+				<span>All</span>
+			</Center>
+		),
+	},
+	{
+		value: "professional",
+		label: (
+			<Center style={{ gap: 10 }}>
+				<TbBriefcase size="1.4em" />
+				<span>Professional</span>
+			</Center>
+		),
+	},
+	{
+		value: "research",
+		label: (
+			<Center style={{ gap: 10 }}>
+				<TbMicroscope size="1.4em" />
+				<span>Scientific Research</span>
+			</Center>
+		),
+	},
+	{
+		value: "open-source",
+		label: (
+			<Center style={{ gap: 10 }}>
+				<TbBrandOpenSourceFilled size="1.4em" />
+				<span>Open Source</span>
+			</Center>
+		),
+	},
+	{
+		value: "active",
+		label: (
+			<Center style={{ gap: 10 }}>
+				<TbPlayerPlayFilled size="1.4em" />
+				<span>Actively Maintained</span>
+			</Center>
+		),
+	},
+];
+
 export default function PortfolioPage() {
-	const [selectedTechStack, setSelectedTechStack] = useState<TechNames | "">(
-		"",
-	);
+	const [techStack, setTechStack] = useState<TechNames | "">("");
+	const [category, setCategory] = useState<string>("");
 
 	function onTechClick(key: string) {
 		ReactGA.event("portfolio_interaction", {
@@ -19,7 +81,7 @@ export default function PortfolioPage() {
 			target: key,
 		});
 
-		setSelectedTechStack(key === selectedTechStack ? "" : (key as TechNames));
+		setTechStack(key === techStack ? "" : (key as TechNames));
 	}
 
 	return (
@@ -40,11 +102,12 @@ export default function PortfolioPage() {
 
 			<Flex align="center" justify="center" gap="xs" wrap="wrap">
 				{Object.entries(Techs)
+					.filter((x) => x[1].show === undefined || x[1].show)
 					.sort((a, b) => a[1].label.localeCompare(b[1].label))
 					.map(([k, v]) => (
 						<Button
 							key={k}
-							variant={k === selectedTechStack ? "filled" : "subtle"}
+							variant={k === techStack ? "filled" : "subtle"}
 							leftSection={v.icon}
 							onClick={() => onTechClick(k)}
 						>
@@ -55,6 +118,14 @@ export default function PortfolioPage() {
 
 			<Title mt="xl">Things I have built</Title>
 			<Text size="xs">The pictures is coming soon!</Text>
+
+			<SegmentedControl
+				color="teal"
+				data={CategoryFilter}
+				value={category}
+				onChange={setCategory}
+			/>
+
 			<Flex
 				mt="xl"
 				align="flex-start"
@@ -64,10 +135,16 @@ export default function PortfolioPage() {
 				w="100%"
 			>
 				{Projects.filter((x) =>
-					selectedTechStack !== "" ? x.tech.includes(selectedTechStack) : true,
-				).map((x) => (
-					<ProjectItem key={x.title} project={x} />
-				))}
+					techStack !== "" ? x.tech.includes(techStack) : true,
+				)
+					.filter((x) =>
+						category !== ""
+							? x.categories.includes(category as ProjectCategory)
+							: true,
+					)
+					.map((x) => (
+						<ProjectItem key={x.title} project={x} />
+					))}
 			</Flex>
 		</Stack>
 	);

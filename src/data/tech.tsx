@@ -3,10 +3,12 @@ import {
 	SiAlpinedotjs,
 	SiApachekafka,
 	SiApachespark,
+	SiArduino,
 	SiBun,
 	SiDatadog,
 	SiDbt,
 	SiDuckdb,
+	SiEspressif,
 	SiFastapi,
 	SiFfmpeg,
 	SiFlask,
@@ -95,11 +97,13 @@ const InternalTechs = {
 	},
 	bun: {
 		label: "Bun",
+		show: false,
 		icon: <SiBun size={IconSize} />,
 	},
 	// frameworks
 	aspnetcore: {
 		label: "ASP.NET Core",
+		show: false,
 	},
 	react: {
 		label: "React",
@@ -119,10 +123,12 @@ const InternalTechs = {
 	},
 	numpy: {
 		label: "NumPy",
+		show: false,
 		icon: <SiNumpy size={IconSize} />,
 	},
 	pandas: {
 		label: "Pandas",
+		show: false,
 		icon: <SiPandas size={IconSize} />,
 	},
 	tensorFlow: {
@@ -139,9 +145,11 @@ const InternalTechs = {
 	},
 	xgboost: {
 		label: "XGBoost",
+		show: false,
 	},
 	lightgbm: {
 		label: "LightGBM",
+		show: false,
 	},
 	mcp: {
 		label: "Model Context Protocol",
@@ -240,23 +248,28 @@ const InternalTechs = {
 	},
 	jira: {
 		label: "JIRA",
+		show: false,
 		icon: <SiJira size={IconSize} />,
 	},
 	// UI
 	wpf: {
 		label: "WPF",
+		show: false,
 		icon: <TbAppWindow size={IconSize} />,
 	},
 	winforms: {
 		label: "Windows Forms",
+		show: false,
 		icon: <TbAppWindow size={IconSize} />,
 	},
 	alpinejs: {
 		label: "Alpine",
+		show: false,
 		icon: <SiAlpinedotjs size={IconSize} />,
 	},
 	mantine: {
 		label: "Mantine",
+		show: false,
 		icon: <SiMantine size={IconSize} />,
 	},
 	// infra
@@ -351,8 +364,19 @@ const InternalTechs = {
 		label: "Gemini",
 		icon: <SiGooglegemini size={IconSize} />,
 	},
+	// hardware
+	arduino: {
+		label: "Arduino",
+		show: false,
+		icon: <SiArduino size={IconSize} />
+	},
+	esp32: {
+		label: "ESP-32",
+		show: false,
+		icon: <SiEspressif size={IconSize} />
+	},
 };
 
 export type TechNames = keyof typeof InternalTechs;
-export const Techs: Record<TechNames, { label: string; icon?: ReactNode }> =
+export const Techs: Record<TechNames, { label: string; show?: boolean; icon?: ReactNode }> =
 	InternalTechs;

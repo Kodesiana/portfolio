@@ -76,7 +76,7 @@ export default function ProjectItem({ project }: { project: Project }) {
 			</Group>
 
 			<Text size="sm" c="dimmed">
-				{project.shortDesc}
+				{project.description}
 			</Text>
 
 			<Divider my="md" />
@@ -104,6 +104,8 @@ export default function ProjectItem({ project }: { project: Project }) {
 						</Flex>
 					</HoverCard.Dropdown>
 				</HoverCard>
+
+				<Text size="xs">{project.year}</Text>
 
 				<Group gap="xs">
 					{project.githubUrl && (
