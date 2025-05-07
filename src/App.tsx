@@ -1,5 +1,5 @@
+import { Suspense, lazy } from "react";
 import ReactGA from "react-ga4";
-import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 
 import { GoogleAnalytics } from "./data";

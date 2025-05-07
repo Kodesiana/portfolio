@@ -20,7 +20,7 @@ import {
 	TbPlayerPlayFilled,
 } from "react-icons/tb";
 
-import { Techs, type Project } from "~/data";
+import { type Project, Techs } from "~/data";
 
 export default function ProjectItem({ project }: { project: Project }) {
 	return (
@@ -63,7 +63,7 @@ export default function ProjectItem({ project }: { project: Project }) {
 									color="var(--mantine-color-red-5)"
 									title="Actively maintained"
 								/>
-							))||
+							)) ||
 							(cat === "professional" && (
 								<TbBriefcase
 									size="1.4em"
@@ -105,36 +105,36 @@ export default function ProjectItem({ project }: { project: Project }) {
 					</HoverCard.Dropdown>
 				</HoverCard>
 
-			<Group gap="xs">
-			{project.githubUrl && (
-					<ActionIcon
-						color="blue"
-						radius="lg"
-						size="lg"
-						variant="light"
-						component="a"
-						target="_blank"
-						href={project.githubUrl}
-						title="Open GitHub repository"
-					>
-						<TbBrandGithub size={18} />
-					</ActionIcon>
-				)}
-				{project.appUrl && (
-					<ActionIcon
-						color="green"
-						radius="lg"
-						size="lg"
-						variant="light"
-						component="a"
-						target="_blank"
-						href={project.appUrl}
-						title="Visit app page"
-					>
-						<TbArrowUpRight size={18} />
-					</ActionIcon>
-				)}
-			</Group>
+				<Group gap="xs">
+					{project.githubUrl && (
+						<ActionIcon
+							color="blue"
+							radius="lg"
+							size="lg"
+							variant="light"
+							component="a"
+							target="_blank"
+							href={project.githubUrl}
+							title="Open GitHub repository"
+						>
+							<TbBrandGithub size={18} />
+						</ActionIcon>
+					)}
+					{project.appUrl && (
+						<ActionIcon
+							color="green"
+							radius="lg"
+							size="lg"
+							variant="light"
+							component="a"
+							target="_blank"
+							href={project.appUrl}
+							title="Visit app page"
+						>
+							<TbArrowUpRight size={18} />
+						</ActionIcon>
+					)}
+				</Group>
 			</Group>
 		</Card>
 	);
