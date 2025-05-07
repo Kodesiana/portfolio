@@ -8,7 +8,7 @@ import {
 	Text,
 	ThemeIcon,
 } from "@mantine/core";
-import { IconCircleCheck } from "@tabler/icons-react";
+import { TbCircleCheck } from "react-icons/tb";
 
 import type { ExperienceBulletItem } from "~/data";
 
@@ -28,7 +28,7 @@ export default function ExperienceBulletList({
 					center
 					icon={
 						<ThemeIcon color="teal" size={24} radius="xl">
-							<IconCircleCheck size={16} />
+							<TbCircleCheck size={16} />
 						</ThemeIcon>
 					}
 				>

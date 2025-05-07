@@ -6,7 +6,7 @@ import {
 	Text,
 	useMantineColorScheme,
 } from "@mantine/core";
-import { IconMoonStars, IconSun } from "@tabler/icons-react";
+import { TbMoonStars, TbSun } from "react-icons/tb";
 
 import { SocialLinks } from "~/data";
 import classes from "./Footer.module.css";
@@ -21,19 +21,9 @@ export default function FooterSection() {
 				<Switch
 					size="lg"
 					color="dark.4"
-					onLabel={
-						<IconSun
-							size={16}
-							stroke={2.5}
-							color="var(--mantine-color-yellow-4)"
-						/>
-					}
+					onLabel={<TbSun size={16} color="var(--mantine-color-yellow-4)" />}
 					offLabel={
-						<IconMoonStars
-							size={16}
-							stroke={2.5}
-							color="var(--mantine-color-blue-6)"
-						/>
+						<TbMoonStars size={16} color="var(--mantine-color-blue-6)" />
 					}
 					checked={colorScheme === "light"}
 					onClick={() => {
