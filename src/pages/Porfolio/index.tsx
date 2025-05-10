@@ -117,13 +117,15 @@ export default function PortfolioPage() {
 			</Flex>
 
 			<Title mt="xl">Things I have built</Title>
-			<Text size="xs">The pictures is coming soon!</Text>
 
 			<SegmentedControl
 				color="teal"
 				data={CategoryFilter}
 				value={category}
 				onChange={setCategory}
+				styles={{
+					root: { flexWrap: 'wrap' },
+				}}
 			/>
 
 			<Flex

@@ -16,14 +16,14 @@ export default function HeroSection() {
 	return (
 		<Stack align="center">
 			<Image src={AvatarPng} w="128px" h="128px" radius="128px" />
-			<Title>Fahmi Noor Fiqri</Title>
+			<Title ta="center">Fahmi Noor Fiqri</Title>
 			<Title order={4} ta="center">
 				Software Engineer
 				<br />
 				Machine Learning Researcher
 			</Title>
 
-			<Text>Building efficient and high performance apps.</Text>
+			<Text ta="center">Building efficient and high performance apps.</Text>
 
 			<Button
 				component="a"
@@ -37,7 +37,7 @@ export default function HeroSection() {
 				Read my blog
 			</Button>
 
-			<Group my="xl">
+			<Group my="xl" justify="center">
 				{SocialLinks.map((x) => (
 					<ActionIcon
 						key={x.label}
