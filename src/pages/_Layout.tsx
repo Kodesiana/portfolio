@@ -1,7 +1,4 @@
-import "@mantine/core/styles.css";
-import "@mantine/nprogress/styles.css";
-
-import { Container, MantineProvider } from "@mantine/core";
+import { Container } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { NavigationProgress, nprogress } from "@mantine/nprogress";
 import { useEffect } from "react";
@@ -21,12 +18,12 @@ export default function App() {
 	}, [scroll]);
 
 	return (
-		<MantineProvider>
+		<>
 			<NavigationProgress />
 			<Container my="128px">
 				<Outlet />
 			</Container>
 			<FooterSection />
-		</MantineProvider>
+		</>
 	);
 }
