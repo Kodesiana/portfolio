@@ -43,6 +43,7 @@ import {
 	SiScrapy,
 	SiSonarqube,
 	SiSqlite,
+	SiTableau,
 	SiTensorflow,
 	SiUv,
 	SiWebassembly,
@@ -204,6 +205,10 @@ const InternalTechs = {
 	msExcel: {
 		label: "Microsoft Excel",
 		icon: <TbBrandOffice size={IconSize} />,
+	},
+	tableau: {
+		label: "Tableau",
+		icon: <SiTableau size={IconSize} />,
 	},
 	kibana: {
 		label: "Kibana",

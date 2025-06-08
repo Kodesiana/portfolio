@@ -20,10 +20,34 @@ export type Project = {
 
 export const Projects: Project[] = [
 	{
+		key: "devto-postmark-2025",
+		year: "2025",
+		title: "Ritsu-Pi EmailOps",
+		categories: ["open-source"],
+		tech: ["dotnet", "sqlite", "docker"],
+		githubUrl: "https://github.com/fahminlb33/ritsu-pi-emailops",
+		appUrl:
+			"https://dev.to/fahminlb33/ritsu-pi-emailops-homelab-management-via-email-powered-by-postmark-4ean",
+		description:
+			"Email-based homelab management using Postmark Inbound Email API. View system resources, start, stop, and restart Docker containers via email",
+	},
+	{
+		key: "bogorintellitraffic",
+		year: "2025",
+		title: "Bogor IntelliTraffic",
+		categories: ["open-source"],
+		tech: ["dotnet", "openai", "ffmpeg"],
+		githubUrl: "https://github.com/Kodesiana/intellitraffic",
+		appUrl:
+			"https://www.linkedin.com/posts/fahmi-noor-fiqri_pitch-deck-for-bogor-intellitraffic-project-activity-7331867665487015936-O80H?utm_source=share&utm_medium=member_desktop&rcm=ACoAABxfGzwB1c29FfWPsCB8w9egtwrTkBivnvM",
+		description:
+			"Traffic intelligence system for Bogor City, Indonesia, utilizing live CCTV feed from Bogor municipality and OpenAI's GPT-1o for traffic analysis",
+	},
+	{
 		key: "devto-permitio-mcp",
 		year: "2025",
 		title: "MCP Server Authorization using Permit.io",
-		categories: ["open-source", "active"],
+		categories: ["open-source"],
 		tech: ["nodejs", "typescript", "mcp", "sqlite"],
 		githubUrl: "https://github.com/fahminlb33/devto-permitio-mcp",
 		appUrl:
@@ -188,6 +212,24 @@ export const Projects: Project[] = [
 			"Comparison of multiple convolutional neural network architectures for diagnosing autism from 16 channels EEG",
 	},
 	{
+		key: "logee-control-tower",
+		year: "2022-2024",
+		title: "Logee Control Tower",
+		categories: ["professional"],
+		tech: ["nodejs", "mongodb"],
+		description:
+			"Logee Control Tower is analytics platform for Logee's end-to-end supply chain solution, providing a helicopter view of the logstics operation",
+	},
+	{
+		key: "logee-transport",
+		year: "2019-2022",
+		title: "Logee Transport",
+		categories: ["professional"],
+		tech: ["nodejs", "mongodb"],
+		description:
+			"Logee Transport is a truck management system to streamline logistics operations",
+	},
+	{
 		key: "pico-nvidia-updater",
 		year: "2024",
 		title: "PicoNvidiaUpdater",
@@ -200,7 +242,7 @@ export const Projects: Project[] = [
 	{
 		key: "kpu2024-pleno-readability",
 		year: "2024-2025",
-		title: "KPU 2024 Image Analytics",
+		title: "Indonesia Presidential Election 2024 Analytics",
 		categories: ["open-source", "active"],
 		tech: ["python", "pandas", "scrapy", "opencv", "jupyter", "uv"],
 		githubUrl: "https://github.com/fahminlb33/kpu2024-pleno-readability",
@@ -334,7 +376,22 @@ export const Projects: Project[] = [
 		description:
 			"Predicting server fault from log data and categorizing sentences into multiple categories",
 	},
-
+	{
+		key: "master-vpn",
+		year: "2018",
+		title: "MasterVPN",
+		categories: ["professional"],
+		tech: ["dotnet"],
+		description: "An evolution of SuperVPN, a VPN client for Windows using Shadowsocks protocol. Now includes a PAC script to automatically select fastest server",
+	},
+	{
+		key: "super-vpn",
+		year: "2018",
+		title: "SuperVPN",
+		categories: ["professional"],
+		tech: ["dotnet"],
+		description: "Easy to use VPN client for Windows using Shadowsocks protocol to circumvent internet censorship",
+	},
 	{
 		key: "mclam",
 		year: "2017",
