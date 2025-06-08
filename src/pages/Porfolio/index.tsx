@@ -65,7 +65,7 @@ const CategoryFilter = [
 		label: (
 			<Center style={{ gap: 10 }}>
 				<TbPlayerPlayFilled size="1.4em" />
-				<span>Actively Maintained</span>
+				<span>Maintained</span>
 			</Center>
 		),
 	},

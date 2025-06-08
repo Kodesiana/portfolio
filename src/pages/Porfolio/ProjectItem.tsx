@@ -82,7 +82,7 @@ export default function ProjectItem({ project }: { project: Project }) {
 			<Divider my="md" />
 
 			<Group gap="0" justify="space-between">
-				<HoverCard width={400}>
+				<HoverCard width={260}>
 					<HoverCard.Target>
 						<Avatar color="white" title="View tech stack">
 							<TbInfoCircle />

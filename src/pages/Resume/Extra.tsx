@@ -42,16 +42,16 @@ const ExtraTabs = {
 		icon: <TbMicroscope size={18} />,
 		component: (
 			<Stack>
+				<Title order={5}>Journal Articles</Title>
+				<PublicationBulletList
+					items={Publications.filter((x) => x.type === "journal_article")}
+				/>
+				
 				<Title order={5} mt="lg">
 					Conference Papers
 				</Title>
 				<PublicationBulletList
 					items={Publications.filter((x) => x.type === "conference_paper")}
-				/>
-
-				<Title order={5}>Journal Articles</Title>
-				<PublicationBulletList
-					items={Publications.filter((x) => x.type === "journal_article")}
 				/>
 			</Stack>
 		),
