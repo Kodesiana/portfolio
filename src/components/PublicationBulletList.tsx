@@ -12,7 +12,7 @@ export default function PublicationBulletList({
 	return (
 		<Spoiler maxHeight={350} showLabel="Show more" hideLabel="Hide" pb="md">
 			<Stack align="center" justify="center">
-				<List spacing="xs">
+				<List spacing="xs" pr="md">
 					{items.map((x) => (
 						<List.Item key={x.key}>{x.citation}</List.Item>
 					))}
