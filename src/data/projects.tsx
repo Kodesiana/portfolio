@@ -20,6 +20,16 @@ export type Project = {
 
 export const Projects: Project[] = [
 	{
+		key: "ipb-promotor-network",
+		year: "2026",
+		title: "IPB Researchers Co-occurence Network",
+		categories: ["open-source", "research"],
+		tech: ["python", "pandas", "cloudflare", "git", "github", "jupyter", "scrapy", "uv"],
+		githubUrl: "https://github.com/Kodesiana/ipb-repo-analysis",
+		appUrl: "https://ipb-promotor.kodesiana.com/",
+		description: "Helping prospective students to find your next supervisor in IPB University",
+	},
+	{
 		key: "devto-postmark-2025",
 		year: "2025",
 		title: "Ritsu-Pi EmailOps",
