@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "format": "npx @biomejs/biome check --write src",
-    "preview": "npm run build && wrangler dev ./dist",
-    "deploy": "npm run build && wrangler deploy ./dist"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@mantine/core": "^8.3.13",
