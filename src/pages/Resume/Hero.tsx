@@ -20,10 +20,12 @@ export default function HeroSection() {
 			<Title order={4} ta="center">
 				Software Engineer
 				<br />
-				Machine Learning Researcher
+				Data Analyst
+				<br />
+				AI/ML Engineer
 			</Title>
 
-			<Text ta="center">Building efficient and high performance apps.</Text>
+			<Text ta="center">Building correct, efficient, and high performance apps.</Text>
 
 			<Button
 				component="a"
