@@ -2,9 +2,8 @@ import { Badge, Button, Group, Highlight, Stack, Title } from "@mantine/core";
 import {
 	TbArrowRight,
 	TbBrandCSharp,
-	TbBrandGolang,
-	TbBrandNodejs,
 	TbBrandPython,
+	TbBrandTypescript,
 } from "react-icons/tb";
 import { Link } from "react-router";
 
@@ -35,17 +34,9 @@ export default function ProjectsSection() {
 				</Badge>
 				<Badge
 					size="xl"
-					color="blue.4"
-					autoContrast
-					leftSection={<TbBrandGolang size="1.4em" />}
-				>
-					Golang
-				</Badge>
-				<Badge
-					size="xl"
 					color="blue"
 					autoContrast
-					leftSection={<TbBrandNodejs size="1.4em" />}
+					leftSection={<TbBrandTypescript size="1.4em" />}
 				>
 					TypeScript
 				</Badge>
