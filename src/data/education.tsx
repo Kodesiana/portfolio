@@ -16,13 +16,13 @@ export const Educations: Education[] = [
 			{
 				key: "Thesis",
 				value:
-					"Prediction of Humpback Whale Sighting Zones based on Environmental Factors from Remote Sensing Data using Tree-based Algorithms",
+					"Humpback Whale Sighting Zones Classification based on Environmental Factors using Tree-based Algorithms",
 			},
-			{ key: "GPA", value: "TBD" },
+			{ key: "GPA", value: "3.80" },
 			{
 				key: "Selected Courses",
 				value:
-					"Computational Intelligence, e-Government, Topics in Data Mining for Agriculture",
+					"Computational Intelligence, e-Government, Data Mining for Agriculture",
 			},
 			{
 				key: "Research Grant",
