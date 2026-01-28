@@ -27,21 +27,41 @@ export const ProfessionalExperienceGreenBadges = [
 
 export const ProfessionalExperience: Experience[] = [
 	{
-		key: "metranet-dpr",
-		company: "Metranet, PT",
+		key: "kemenkeu-ri",
+		company: "Ministry of Finance of Republic Indonesia (Kemenkeu RI)",
 		location: "Jakarta, Indonesia",
-		employmentType: "Freelance",
+		employmentType: "Contract",
+		employmentDuration: "October 2025 - present",
+		description: [
+			{
+				title: "Senior Backend Developer",
+				company: "Badan Teknolog, Informasi, dan Intelijen Keuangan (BaTii)",
+				duration: "October 2025 - present",
+				items: [
+					"Built a scalable RESTful API using ASP.NET Core & .NET 9",
+					"Introduced OpenTelemetry standard for system-wide application performance monitoring (APM)",
+					"Organized k8s deployments using Helm charts to reduce deployment complexity and management"
+				]
+			}
+		],
+		badges: [".NET", "ASP.NET Core", "PostgreSQL", "Kubernetes", "Azure TFS", "VMware Tanzu", "Nginx Ingress Controller", "SonarQube"]
+	},
+	{
+		key: "dpr-ri",
+		company: "House of Representatives of Republic Indonesia (DPR RI)",
+		location: "Jakarta, Indonesia",
+		employmentType: "Contract",
 		employmentDuration: "May 2025 - present",
 		description: [
 			{
-				title: "Data Analyst (and more)",
-				company: "House of Representatives (DPR)",
+				title: "Data Analyst",
+				company: "Pusat Teknologi Informasi (Pustekinfo)",
 				duration: "May 2025 - present",
 				items: [
 					"Developed strategic dashboard using Tableau to government units support decision making",
-					"Utilized LLM to analyze legal bills and clauses and provided comprehensive analysis of possible contradictions to existing laws",
-					"Provisioned and managed multiple AI-centric applications: llama-cpp-python, SGLang, Dify.ai, and n8n, along with it's dependencies such as Docker, PostgreSQL, Redis, and Minio",
-					"Quantized multiple LLMs for efficient inference using llama.cpp and SGLang",
+					"Utilized LLM to analyze legal docuemtns and provided comprehensive analysis of possible contradictions to existing laws",
+					"Provisioned and managed multiple AI-centric applications: llama-cpp-python, SGLang, vLLM, Dify.ai, and n8n, along with it's dependencies such as Docker, PostgreSQL, Redis, and Minio",
+					"Quantized multiple LLMs for efficient inference using llama.cpp, SGLang, and vLLM",
 				],
 			},
 		],
@@ -52,11 +72,11 @@ export const ProfessionalExperience: Experience[] = [
 		company: "Self-Employed",
 		location: "Remote from Bogor, West Java, Indonesia",
 		employmentType: "Freelance",
-		employmentDuration: "March 2024 - present",
+		employmentDuration: "March 2024 - December 2025",
 		description: [
 			{
 				title: "Research Assistant",
-				duration: "January 2022 - present",
+				duration: "January 2022 - December 2025",
 				items: [
 					"Contributed to Sundanese NLP research for evaluating stemming algorithm",
 					"Utilized ChatGPT to generate synthetic dataset and fine-tuned information retrieval model based on Sentence-Transformers pretrained model",
@@ -187,7 +207,7 @@ export const ProfessionalExperience: Experience[] = [
 		employmentDuration: "January 2019 - November 2019",
 		description: [
 			{
-				title: "Windows Developer",
+				title: "Windows Desktop App Developer",
 				duration: "January 2022 - March 2024",
 				items: [
 					"Developed a Windows-based Windows Presentation Foundation (WPF) application to tunnel internet traffic through a Shadowsocks proxy server via TUN adapter",
