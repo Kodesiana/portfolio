@@ -1,4 +1,4 @@
-import { Badge, Flex, Group, Image, SimpleGrid, Stack, Text } from "@mantine/core";
+import { Badge, Flex, Image, SimpleGrid, Stack, Text } from "@mantine/core";
 
 import HomeLabPng from "~/assets/server-rack.webp";
 
